@@ -1,4 +1,4 @@
-package com.picpay_simplificado.domain.users;
+package com.picpay_simplificado.domain.user;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @EqualsAndHashCode(of="id")
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
