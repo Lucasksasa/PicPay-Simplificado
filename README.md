@@ -1,139 +1,163 @@
-Desafio Back-end PicPay
-Primeiramente, obrigado pelo seu interesse em trabalhar na melhor plataforma de pagamentos do mundo! Abaixo você encontrará todos as informações necessárias para iniciar o seu teste.
+# Desafio Back-end PicPay
 
-Avisos antes de começar
-Leia com atenção este documento todo e tente seguir ao máximo as instruções;
-Crie um repositório no seu GitHub sem citar nada relacionado ao PicPay;
-Faça seus commits no seu repositório;
-Envie o link do seu repositório para o email do recrutador responsável;
-Você poderá consultar o Google, Stackoverflow ou algum projeto particular na sua máquina;
-Dê uma olhada nos Materiais úteis;
-Dê uma olhada em como será a entrevista;
-Fique à vontade para perguntar qualquer dúvida aos recrutadores;
-Fique tranquilo, respire, assim como você, também já passamos por essa etapa. Boa sorte! :)
-Corpo do Email com o link do repositório do desafio
+Primeiramente, obrigado pelo seu interesse em trabalhar na melhor plataforma de pagamentos do mundo! Abaixo você encontrará todas as informações necessárias para iniciar o seu teste.
 
-Seu Nome
+---
 
-Nome do recrutador
+## 🚀 Avisos antes de começar
 
-Link do repositório
+- Leia com atenção este documento todo e tente seguir ao máximo as instruções;
+- Crie um repositório no seu GitHub **sem citar nada relacionado ao PicPay**;
+- Faça seus commits no seu repositório;
+- Envie o link do seu repositório para o e-mail do recrutador responsável;
+- Você poderá consultar o Google, Stack Overflow ou algum projeto particular na sua máquina;
+- Dê uma olhada nos **Materiais úteis**;
+- Dê uma olhada em **como será a entrevista**;
+- Fique à vontade para perguntar qualquer dúvida aos recrutadores;
+- Fique tranquilo, respire. Assim como você, também já passamos por essa etapa. **Boa sorte!** 😊
 
-Link do Linkedin
+---
 
-Sobre o ambiente da aplicação:
-Escolha qualquer framework que se sinta confortável em trabalhar. Esse teste não faz nenhuma preferência, portanto decida por aquele com o qual estará mais seguro em apresentar e conversar com a gente na entrevista ;)
+## ✉️ Corpo do e-mail com o link do repositório do desafio
 
-Você pode, inclusive, não optar por framework nenhum. Neste caso, recomendamos a implementação do serviço via script para diminuir a sobrecarga de criar um servidor web;
+-Seu Nome
+-Nome do recrutador
+-Link do repositório 
+-Link do LinkedIn
 
-Ainda assim, se optar por um framework tente evitar usar muito métodos mágicos ou atalhos já prontos. Sabemos que essas facilidades aumentam a produtividade no dia-a-dia mas aqui queremos ver o seu código e a sua forma de resolver problemas;
+---
 
-Valorizamos uma boa estrutura de containeres criada por você.
+## ⚙️ Sobre o ambiente da aplicação
 
-Para o dia da entrevista técnica
-Na data marcada pelo recrutador tenha sua aplicação rodando na sua máquina local para execução dos testes e para nos mostrar os pontos desenvolvidos e possíveis questionamentos. Faremos um code review junto contigo como se você já fosse do nosso time ❤️, você poderá explicar o que você pensou, como arquitetou e como pode evoluir o projeto.
+- Escolha qualquer framework que se sinta confortável em trabalhar.
+- Esse teste **não faz nenhuma preferência**, portanto decida por aquele com o qual estará mais seguro em apresentar e conversar com a gente na entrevista. 😉
+- Você pode optar por **não utilizar framework nenhum**. Neste caso, recomendamos a implementação do serviço via **script** para diminuir a sobrecarga de criar um servidor web.
+- **Se optar por um framework**, tente evitar o uso excessivo de métodos mágicos ou atalhos já prontos.
+- **Valorizamos uma boa estrutura de containers criada por você.**
 
-Objetivo: PicPay Simplificado
-O PicPay Simplificado é uma plataforma de pagamentos simplificada. Nela é possível depositar e realizar transferências de dinheiro entre usuários. Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinheiro e realizam transferências entre eles.
+---
 
-Requisitos
-A seguir estão algumas regras de negócio que são importantes para o funcionamento do PicPay Simplificado:
+## 📅 Para o dia da entrevista técnica
 
-Para ambos tipos de usuário, precisamos do Nome Completo, CPF, e-mail e Senha. CPF/CNPJ e e-mails devem ser únicos no sistema. Sendo assim, seu sistema deve permitir apenas um cadastro com o mesmo CPF ou endereço de e-mail;
+- Na data marcada pelo recrutador, tenha sua aplicação rodando **na sua máquina local** para execução dos testes.
+- Durante a entrevista, faremos um **code review** com você.
+- Explique sua arquitetura, suas escolhas e como o projeto pode evoluir.
 
-Usuários podem enviar dinheiro (efetuar transferência) para lojistas e entre usuários;
+---
 
-Lojistas só recebem transferências, não enviam dinheiro para ninguém;
+## 🎯 Objetivo: PicPay Simplificado
 
-Validar se o usuário tem saldo antes da transferência;
+O **PicPay Simplificado** é uma plataforma de pagamentos simplificada. Nela, é possível **depositar e realizar transferências de dinheiro entre usuários**. Temos **dois tipos de usuários**:
 
-Antes de finalizar a transferência, deve-se consultar um serviço autorizador externo, use este mock https://util.devi.tools/api/v2/authorize para simular o serviço utilizando o verbo GET;
+- **Comuns**: podem enviar e receber dinheiro.
+- **Lojistas**: **somente recebem dinheiro** e não podem enviar transferências.
 
-A operação de transferência deve ser uma transação (ou seja, revertida em qualquer caso de inconsistência) e o dinheiro deve voltar para a carteira do usuário que envia;
+---
 
-No recebimento de pagamento, o usuário ou lojista precisa receber notificação (envio de email, sms) enviada por um serviço de terceiro e eventualmente este serviço pode estar indisponível/instável. Use este mock https://util.devi.tools/api/v1/notify)) para simular o envio da notificação utilizando o verbo POST;
+## ✅ Requisitos
 
-Este serviço deve ser RESTFul.
+- Para ambos tipos de usuário, precisamos do **Nome Completo, CPF, e-mail e Senha**.
+- CPF/CNPJ e e-mails **devem ser únicos no sistema**.
+- **Usuários comuns podem enviar dinheiro** para lojistas e entre si.
+- **Lojistas só recebem transferências, não enviam dinheiro**.
+- Antes da transferência, valide se o usuário **possui saldo suficiente**.
+- Antes de finalizar a transferência, consulte um **serviço autorizador externo** usando este mock:
+  - `GET https://util.devi.tools/api/v2/authorize`
+- A operação de transferência deve ser **uma transação**, garantindo que o dinheiro volte ao usuário pagador em caso de falha.
+- Após a transferência, o recebedor precisa receber **uma notificação externa** (e-mail ou SMS). Use este mock:
+  - `POST https://util.devi.tools/api/v1/notify`
+- **O serviço deve ser RESTful.**
 
-Tente ser o mais aderente possível ao que foi pedido, mas não se preocupe se não conseguir atender a todos os requisitos. Durante a entrevista vamos conversar sobre o que você conseguiu fazer e o que não conseguiu.
+> ⚠️ **Tente atender ao máximo dos requisitos, mas não se preocupe se não conseguir fazer tudo!** Durante a entrevista, vamos conversar sobre os pontos desenvolvidos. 😊
 
-Endpoint de transferência
-Você pode implementar o que achar conveniente, porém vamos nos atentar somente ao fluxo de transferência entre dois usuários. A implementação deve seguir o contrato abaixo.
+---
 
-POST /transfer
-Content-Type: application/json
+## 🔄 Endpoint de Transferência
 
-{
-  "value": 100.0,
-  "payer": 4,
-  "payee": 15
-}
-Caso ache interessante, faça uma proposta de endpoint e apresente para os entrevistadores ❤️
+A implementação deve seguir o contrato abaixo:
 
-Avaliação
-Apresente sua solução utilizando o framework que você desejar, justificando a escolha. Atente-se a cumprir a maioria dos requisitos, pois você pode cumprir-los parcialmente e durante a avaliação vamos bater um papo a respeito do que faltou.
+POST /transfer Content-Type: application/json
 
-O que será avaliado e valorizamos ❤️
-Habilidades básicas de criação de projetos backend:
+{ "value": 100.0, "payer": 4, "payee": 15 }
 
-Conhecimentos sobre REST
-Uso do Git
-Capacidade analítica
-Apresentação de código limpo e organizado
-Conhecimentos intermediários de construção de projetos manuteníveis:
+markdown
+Copiar
+Editar
 
-Aderência a recomendações de implementação como as PSRs
-Aplicação e conhecimentos de SOLID
-Identificação e aplicação de Design Patterns
-Noções de funcionamento e uso de Cache
-Conhecimentos sobre conceitos de containers (Docker, Podman etc)
-Documentação e descrição de funcionalidades e manuseio do projeto
-Implementação e conhecimentos sobre testes de unidade e integração
-Identificar e propor melhorias
-Boas noções de bancos de dados relacionais
-Aptidões para criar e manter aplicações de alta qualidade:
+Caso ache interessante, faça uma proposta de endpoint e **apresente para os entrevistadores** ❤️.
 
-Aplicação de conhecimentos de observabilidade
-Utlização de CI para rodar testes e análises estáticas
-Conhecimentos sobre bancos de dados não-relacionais
-Aplicação de arquiteturas (CQRS, Event-sourcing, Microsserviços, Monolito modular)
-Uso e implementação de mensageria
-Noções de escalabilidade
-Boas habilidades na aplicação do conhecimento do negócio no software
-Implementação margeada por ferramentas de qualidade (análise estática, PHPMD, PHPStan, PHP-CS-Fixer etc)
-Noções de PHP assíncrono
-Boas práticas
-Caso use PHP tente seguir as PSRs, caso use outro framework ou linguagem, tente seguir as boas práticas da comunidade.
+---
 
-Uma sugestão para revisar a qualidade do seu código é usar ferramentas como o PHPMD antes de submeter o seu teste. O comando a seguir pode ser usado para rodar o PHPMD no seu projeto localmente, por exemplo:
+## 🧐 Avaliação
 
-docker run -it --rm -v $(pwd):/project -w /project jakzal/phpqa phpmd app text cleancode,codesize,controversial,design,naming,unusedcode
-O que NÃO será avaliado ⚠️
-Fluxo de cadastro de usuários e lojistas
-Frontend (só avaliaremos a (API Restful)[https://www.devmedia.com.br/rest-tutorial/28912])
-Autenticação
-O que será um Diferencial
-Uso de Docker
-Uma cobertura de testes consistente
-Uso de Design Patterns
-Documentação
-Proposta de melhoria na arquitetura
-Ser consistente e saber argumentar suas escolhas
-Apresentar soluções que domina
-Modelagem de Dados
-Manutenibilidade do Código
-Tratamento de erros
-Cuidado com itens de segurança
-Arquitetura (estruturar o pensamento antes de escrever)
-Carinho em desacoplar componentes (outras camadas, service, repository)
-Materiais úteis
-https://picpay.com/site/sobre-nos
-https://hub.packtpub.com/why-we-need-design-patterns/
-https://refactoring.guru/
-http://br.phptherightway.com/
-https://www.php-fig.org/psr/psr-12/
-https://www.atlassian.com/continuous-delivery/software-testing/types-of-software-testing
-https://github.com/exakat/php-static-analysis-tools
-https://martinfowler.com/articles/microservices.html
-https://docs.guzzlephp.org/en/stable/request-options.html
-https://www.devmedia.com.br/rest-tutorial/28912
+Apresente sua solução utilizando o framework que desejar, justificando a escolha. Atente-se a cumprir a maioria dos requisitos.
+
+### O que será avaliado e valorizamos ❤️
+
+#### 🛠️ Habilidades básicas:
+- Conhecimentos sobre **REST**
+- Uso do **Git**
+- **Capacidade analítica**
+- Código **limpo e organizado**
+
+#### 🏗️ Construção de projetos manuteníveis:
+- Aderência a **PSRs**
+- Aplicação de **SOLID**
+- Uso de **Design Patterns**
+- Noções de **Cache**
+- Uso de **Containers (Docker, Podman, etc.)**
+- **Documentação**
+- **Testes de unidade e integração**
+- **Banco de dados relacionais**
+
+#### 🚀 Aptidões para criar aplicações de alta qualidade:
+- **Observabilidade**
+- Uso de **CI para testes e análise estática**
+- Conhecimento sobre **bancos NoSQL**
+- Aplicação de **arquiteturas (CQRS, Event-sourcing, Microsserviços, etc.)**
+- Uso de **mensageria**
+- **Escalabilidade**
+- **Segurança e boas práticas**
+
+---
+
+## ❌ O que NÃO será avaliado ⚠️
+
+- **Fluxo de cadastro de usuários e lojistas**
+- **Frontend (avaliamos apenas a API RESTful)**
+- **Autenticação**
+
+---
+
+## 🎯 O que será um diferencial
+
+- Uso de **Docker**
+- **Cobertura de testes consistente**
+- **Uso de Design Patterns**
+- **Documentação**
+- **Proposta de melhoria na arquitetura**
+- **Capacidade de argumentação das suas escolhas**
+- **Modelagem de Dados**
+- **Tratamento de erros**
+- **Manutenibilidade do Código**
+- **Componentes desacoplados (Service, Repository, etc.)**
+
+---
+
+## 📚 Materiais úteis
+
+- [Sobre o PicPay](https://picpay.com/site/sobre-nos)
+- [Design Patterns](https://hub.packtpub.com/why-we-need-design-patterns/)
+- [Refactoring Guru](https://refactoring.guru/)
+- [PHP: The Right Way](http://br.phptherightway.com/)
+- [PSR-12](https://www.php-fig.org/psr/psr-12/)
+- [Tipos de Testes de Software](https://www.atlassian.com/continuous-delivery/software-testing/types-of-software-testing)
+- [PHP Static Analysis Tools](https://github.com/exakat/php-static-analysis-tools)
+- [Microservices Architecture](https://martinfowler.com/articles/microservices.html)
+- [Guzzle PHP](https://docs.guzzlephp.org/en/stable/request-options.html)
+- [REST API - DevMedia](https://www.devmedia.com.br/rest-tutorial/28912)
+
+---
+
+**Boa sorte no desafio!** 🚀🔥
+
