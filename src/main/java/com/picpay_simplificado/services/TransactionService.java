@@ -1,5 +1,6 @@
 package com.picpay_simplificado.services;
 
+import com.picpay_simplificado.dtos.TransactionDTO;
 import com.picpay_simplificado.repositories.TransactionRepository;
 import com.picpay_simplificado.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,6 @@ public class TransactionService {
     private TransactionRepository repository;
 
     public void createTransaction(TransactionDTO transaction){
-        
+
     }
 }
